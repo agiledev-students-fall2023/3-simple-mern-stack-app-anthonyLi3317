@@ -22,6 +22,19 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+// a route to handle sending JSON for the About Us Page
+app.get('/about', (req, res) => {
+  res.json({
+    name: 'About Page',
+    imageUrl: 'https://imageupload.io/ib/Y9sWzsfsFXPn3mv_1695885253.jpeg',
+    paragraphs: [
+      "Hello, my name is Anthony Li, a passionate and dedicated Chinese senior studying Computer and Data Science at NYU CAS. I love coding, table tennis, skiing, and playing poker.",
+      "In this semester, I am taking Agile Software Development, Computer Vision, and Parallel Computing. Feel free to reach out to me at xl3317@nyu.edu.",
+      "Throughout my career, I have worked on numerous projects, contributing my skills and knowledge to create impactful and user-friendly applications. I am constantly exploring new technologies and methodologies to enhance my abilities and deliver exceptional results for my clients and employers."
+    ]
+  })
+})
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
@@ -77,6 +90,8 @@ app.post('/messages/save', async (req, res) => {
     })
   }
 })
+
+
 
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!

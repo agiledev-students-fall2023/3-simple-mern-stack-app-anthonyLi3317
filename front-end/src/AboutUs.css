@@ -1,0 +1,9 @@
+img {
+    width: 50%;
+    max-width: 300px;
+    margin: 16px 0;
+  }
+
+p {
+    margin: 16px 0; /* top and bottom margin */
+}
